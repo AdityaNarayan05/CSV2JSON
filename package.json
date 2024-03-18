@@ -1,0 +1,13 @@
+{
+  "name": "csv2json",
+  "version": "1.0.0",
+  "description": "Convert CSV to JSON",
+  "main": "csv2json.js",
+  "keywords": ["CSV","JSON","parse","convert"],
+  "author": "Aditya Narayan Jaiswal <nlaxmi886@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "license": "ISC"
+}
