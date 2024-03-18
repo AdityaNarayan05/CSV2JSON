@@ -1,0 +1,49 @@
+**Project Title**: csv2json
+
+**Description**: 
+csv2json is a JavaScript library designed to convert CSV (Comma-Separated Values) data into JSON (JavaScript Object Notation) format. It provides a simple and efficient solution for parsing CSV files and transforming them into structured JSON objects.
+
+**Features**:
+- **CSV to JSON Conversion**: Converts CSV data into JSON format.
+- **Automatic Separator Detection**: Automatically detects the separator used in the CSV data.
+- **Nested Property Support**: Supports nested properties in CSV headers, converting them into nested objects in the resulting JSON.
+- **Numeric Value Parsing**: Optionally parses numeric values from the CSV data.
+
+**Installation**:
+```bash
+npm install csv2json
+```
+
+**Usage**:
+- **Node.js**:
+```javascript
+const csv2json = require('csv2json');
+
+const csvData = `...`; // Your CSV data
+const jsonData = csv2json(csvData, options);
+```
+
+- **Web Browser**:
+```html
+<script type="text/javascript" src="csv2json.js"></script>
+<script>
+  const csvData = `...`; // Your CSV data
+  const jsonData = CSVJSON.csv2json(csvData, options);
+</script>
+```
+
+**Options**:
+- `parseNumbers`: Set to `true` to parse numeric values from the CSV data.
+
+**Contributing**:
+Contributions to this project are welcome. Fork the repository, make your changes, and submit a pull request.
+
+**License**:
+This project is licensed under the ISC License.
+
+**Author**:
+Aditya Narayan Jaiswal
+Email: nlaxmi886@gmail.com
+
+**Repository**:
+- [GitHub](https://github.com/AdityaNarayan05/CSV2JSON.git)

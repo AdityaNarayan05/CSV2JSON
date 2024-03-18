@@ -1,6 +1,8 @@
 (function () {
+  // Array of potential separators for CSV data
   var separators = [",", ";", "\t"];
 
+  // Function to detect the most commonly used separator in the CSV data
   function detectSeparator(csv) {
     var counts = {},
       sepMax;
@@ -12,25 +14,12 @@
     return sepMax;
   }
 
-  function zip() {
-    var args = [].slice.call(arguments);
-    var longest = args.reduce(function (a, b) {
-      return a.length > b.length ? a : b;
-    }, []);
-
-    return longest.map(function (_, i) {
-      return args.map(function (array) {
-        return array[i];
-      });
-    });
-  }
-
+  // Function to convert CSV data to JSON format
   function convert(csv) {
     var separator = detectSeparator(csv);
     if (!separator) throw "We could not detect the separator.";
 
     var rows = csv.split('\n').map(row => row.split(separator));
-
     var keys = rows.shift().map(key => key.trim());
     if (keys.length == 0) throw "Could not detect header.";
 
@@ -59,12 +48,14 @@
     return json;
   };
 
+  // Export the convert function for Node.js environment
   if (typeof exports !== 'undefined') {
     if (typeof module !== 'undefined' && module.exports) {
       exports = module.exports = convert;
     }
     exports.csv2json = convert;
   } else {
+    // Export the convert function for browser environment
     this.CSVJSON || (this.CSVJSON = {});
     this.CSVJSON.csv2json = convert;
   }
